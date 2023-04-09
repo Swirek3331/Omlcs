@@ -6,18 +6,39 @@ namespace Omlcs.src
 {
     public static class Randomite
     {
+        /// <summary>
+        /// Zmienna losowa
+        /// </summary>
         public static Random rand = new Random();
 
+        /// <summary>
+        /// Funkcja losująca liczbę całkowitą.
+        /// </summary>
+        /// <returns>Pseudolosowy <c>int</c></returns>
+        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         public static int Rand()
         {
             return rand.Next();
         }
-        
+
+        /// <summary>
+        /// Funkcja losująca liczbę całkowitą z zakresu od 0 do <c>max</c>
+        /// </summary>
+        /// <param name="max">Maksymalny zakres</param>
+        /// <returns>Pseudolosowy <c>int</c></returns>
+        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         public static int Rand(int max)
         {
             return rand.Next(max);
         }
 
+        /// <summary>
+        /// Funkcja losująca liczbę całkowitą z zakresu od <c>min</c> do <c>max</c>
+        /// </summary>
+        /// <param name="min">Zakres minalny</param>
+        /// <param name="max">Zakres maksymalny</param>
+        /// <returns>Pseudolosą liczbę całkowitą typu <c>int</c></returns>
+        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         public static int Rand(int min, int max)
         {
             return rand.Next(min, max);

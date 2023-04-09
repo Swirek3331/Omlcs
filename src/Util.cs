@@ -8,13 +8,11 @@ namespace Omlcs.src
 {
     public static class Util
     {
-        /* Ja tu się jeszcze kiedyś w generics pobawię.
+        /* 
+         * Ja tu się jeszcze kiedyś w generics pobawię.
          * Narazie jest jak jest.
          */
-
-        // <sumary>
-        // Wypełnia daną talbicę wartością podaną jako argument drugi - od 0 do 255.
-        // </sumary>
+        
         public static int[] FillAnArray(int[] array, byte value)
         {
             for (int i = 0; i < array.Length; i++)
@@ -25,9 +23,6 @@ namespace Omlcs.src
             return array;
         }
 
-        // <sumary>
-        // Wypełnią podaną dwuwymiarową tablicę wartością daną wartością.
-        // </sumary>
         public static int[,] Fill2DArray(int[,] array, byte value)
         {
             for (int i = 0; i < array.GetLength(0); i++)
@@ -41,10 +36,6 @@ namespace Omlcs.src
             return array;
         }
 
-
-        // <sumary>
-        // Wypełnia trójwymiarową tablicę typu int
-        // <sumary>
         public static int[,,] Fill3DArray(int[,,] array, byte value)
         {
             for (int i = 0; i < array.GetLength(0); i++)

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Omlcs.src
 {
-    public class Mathex
+    public static class Mathex
     {
         public static float PI = (float)Math.PI;
         public static float E = (float)Math.E;

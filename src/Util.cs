@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Omlcs.src
 {
-    public class Util
+    public static class Util
     {
         /* Ja tu się jeszcze kiedyś w generics pobawię.
          * Narazie jest jak jest.

@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Forms;
 
 namespace Omlcs.src
 {
@@ -15,7 +16,7 @@ namespace Omlcs.src
         {
             return rand.Next();
         }
-
+        
         public static int Rand(int max)
         {
             return rand.Next(max);

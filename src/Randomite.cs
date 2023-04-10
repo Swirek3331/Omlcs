@@ -12,7 +12,7 @@ namespace Omlcs.src
         public static Random rand = new Random();
 
         /// <summary>
-        /// Funkcja losująca liczbę całkowitą.
+        /// Funkcja losująca liczbę całkowitą
         /// </summary>
         /// <returns>Pseudolosowy <c>int</c></returns>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>

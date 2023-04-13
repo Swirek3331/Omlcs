@@ -20,7 +20,7 @@ jobs:
       - name: DLL file to artifacts folder
         run: cp Omlcs/bin/Release/Omlcs.dll ${{ github.workspace }}/artifacts/
       - name: Upload
-        uses: action/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: Omlcs DLL
           path: ${{ github.workspace }}/artifacts/Omlcs.dll

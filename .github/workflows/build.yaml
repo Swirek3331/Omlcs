@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup MSBuild path
+        uses: microsoft/setup-msbuild@v1.0.2
+      - name: Restore NuGet packages
+        run: nuget restore Omlcs.sln
+      - name: Build library project
+        run: msbuild /p:Configuration = Release Omlcs.sln
+      - name: DLL file to artifacts folder
+        run: cp Omlcs/bin/Release/Omlcs.dll ${{ github.workspace }}/artifacts/
+      - name: Upload
+        uses: action/upload-artifact@v2
+        with:
+          name: Omlcs DLL
+          path: ${{ github.workspace }}/artifacts/Omlcs.dll

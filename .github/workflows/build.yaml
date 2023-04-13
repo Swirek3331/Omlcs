@@ -16,7 +16,7 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore Omlcs.sln
       - name: Build library project
-        run: msbuild /p:Configuration = Release Omlcs.sln
+        run: msbuild /p:Configuration = Release Omlcs.csproj
       - name: DLL file to artifacts folder
         run: cp Omlcs/bin/Release/Omlcs.dll ${{ github.workspace }}/artifacts/
       - name: Upload

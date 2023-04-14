@@ -5,7 +5,6 @@ namespace Omlcs.src
 {
     public class Msb
     {
-
         public static void Message(string message)
         {
             MessageBox.Show(message);
@@ -41,6 +40,16 @@ namespace Omlcs.src
             {
                 Application.Exit();
             }
+        }
+
+        public static void Error(string message)
+        {
+            MessageBox.Show(message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void Error(string title, string message)
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

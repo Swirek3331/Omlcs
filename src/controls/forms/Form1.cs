@@ -16,5 +16,15 @@ namespace Omlcs.src.controls.forms
         {
             InitializeComponent();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Summon.MakeBox(this);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Size = Randomite.RandomSize();
+        }
     }
 }

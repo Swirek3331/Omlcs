@@ -71,5 +71,35 @@ namespace Omlcs.src
         {
             return Create2DArray(rows, cols, 0);
         }
+
+        public static byte HexToByte(char hex)
+        {
+            byte result = 0;
+            hex = char.ToUpper(hex);
+            
+            switch (hex)
+            {
+                case 'A':
+                    result = 10;
+                    break;
+                case 'B':   
+                    result = 11;
+                    break;
+                case 'C':
+                    result = 12;
+                    break;
+                case 'D':
+                    result = 13;
+                    break;
+                case 'E':
+                    result = 14;
+                    break;
+                case 'F':
+                    result = 15;
+                    break;
+            }
+
+            return result;
+        }
     }
 }

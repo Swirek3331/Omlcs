@@ -49,57 +49,27 @@ namespace Omlcs.src
             return array;
         }
 
-        public static int[] CreateAnArray(byte size, byte value)
+        public static int[] CreateAnArray(int size, byte value)
         {
             int[] array = new int[size];
             return FillAnArray(array, value);
         }
 
-        public static int[,] Create2DArray(byte rows, byte cols, byte value)
+        public static int[,] Create2DArray(int rows, int cols, byte value)
         {
             int[,] array = new int[rows, cols];
             return Fill2DArray(array, value);
         }
 
-        public static int[,,] Create3DArray(byte rows, byte cols, byte depth, byte value)
+        public static int[,,] Create3DArray(int rows, int cols, int depth, byte value)
         {
             int[,,] array = new int[rows, cols, depth];
             return Fill3DArray(array, value);
         }
 
-        public static int[,] Zeros(byte rows, byte cols)
+        public static int[,] Zeros(int rows, int cols)
         {
             return Create2DArray(rows, cols, 0);
-        }
-
-        public static byte HexToByte(char hex)
-        {
-            byte result = 0;
-            hex = char.ToUpper(hex);
-            
-            switch (hex)
-            {
-                case 'A':
-                    result = 10;
-                    break;
-                case 'B':   
-                    result = 11;
-                    break;
-                case 'C':
-                    result = 12;
-                    break;
-                case 'D':
-                    result = 13;
-                    break;
-                case 'E':
-                    result = 14;
-                    break;
-                case 'F':
-                    result = 15;
-                    break;
-            }
-
-            return result;
         }
     }
 }

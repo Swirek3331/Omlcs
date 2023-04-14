@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Hex.cs" />
     <Compile Include="src\Summon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Msb.cs" />

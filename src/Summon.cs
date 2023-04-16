@@ -8,16 +8,22 @@ namespace Omlcs
 {
     public class Summon
     {
-        public static void MakeBox(Control container)
+        public static void RandomMake(Control entity, Control container)
         {
-            PictureBox box = new PictureBox
-            {
-                Size = Randomite.RandomSize(10, 100),
-                Location = Randomite.RandomPosition(container),
-                BackColor = Randomite.RandomColor()
-            };
+            entity.Size = Randomite.RandomSize(container);
+            entity.BackColor = Randomite.RandomColor();
+            entity.Location = Randomite.RandomPosition(container);
 
-            container.Controls.Add(box);
+            container.Controls.Add(entity);
+        }
+
+        public static void RandomMake(Control entity, Control container, int width, int height)
+        {
+            entity.Size = new Size(width, height);
+            entity.BackColor = Randomite.RandomColor();
+            entity.Location = Randomite.RandomPosition(container);
+
+            container.Controls.Add(entity);
         }
     }
 }

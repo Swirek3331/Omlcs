@@ -5,12 +5,8 @@ namespace Omlcs.src
 {
     public class Util
     {
-        /* 
-         * Ja tu się jeszcze kiedyś w generics pobawię.
-         * Narazie jest jak jest.
-         */
         
-        public static int[] FillAnArray(int[] array, byte value)
+        public static T[] FillAnArray<T>(T[] array, T value)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -20,7 +16,7 @@ namespace Omlcs.src
             return array;
         }
 
-        public static int[,] Fill2DArray(int[,] array, byte value)
+        public static T[,] Fill2DArray<T>(T[,] array, T value)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -33,7 +29,7 @@ namespace Omlcs.src
             return array;
         }
 
-        public static int[,,] Fill3DArray(int[,,] array, byte value)
+        public static T[,,] Fill3DArray<T>(T[,,] array, T value)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -49,21 +45,21 @@ namespace Omlcs.src
             return array;
         }
 
-        public static int[] CreateAnArray(int size, byte value)
+        public static T[] CreateAnArray<T>(int size, T value)
         {
-            int[] array = new int[size];
+            T[] array = new T[size];
             return FillAnArray(array, value);
         }
 
-        public static int[,] Create2DArray(int rows, int cols, byte value)
+        public static T[,] Create2DArray<T>(int rows, int cols, T value)
         {
-            int[,] array = new int[rows, cols];
+            T[,] array = new T[rows, cols];
             return Fill2DArray(array, value);
         }
 
-        public static int[,,] Create3DArray(int rows, int cols, int depth, byte value)
+        public static T[,,] Create3DArray<T>(int rows, int cols, int depth, T value)
         {
-            int[,,] array = new int[rows, cols, depth];
+            T[,,] array = new T[rows, cols, depth];
             return Fill3DArray(array, value);
         }
 

@@ -18,9 +18,9 @@ namespace Omlcs.src
             return Color.FromArgb(r, g, b);
         }
 
-        public static byte ParseHex(string hex, int index, int lenght)
+        private static byte ParseHex(string hex, int index, int lenght)
         {
-            return byte.Parse(hex.Substring(index, lenght), NumberStyles.HexNumber);
+            return byte.Parse(hex.Substring(index, lenght - index), NumberStyles.HexNumber);
         }
     }
 }

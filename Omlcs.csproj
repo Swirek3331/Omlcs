@@ -49,12 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\controls\forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\controls\forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\Hex.cs" />
     <Compile Include="src\Summon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,11 +56,6 @@
     <Compile Include="src\Randomite.cs" />
     <Compile Include="src\Mathex.cs" />
     <Compile Include="src\Util.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="src\controls\forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

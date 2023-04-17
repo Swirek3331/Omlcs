@@ -12,7 +12,7 @@ namespace Omlcs
         {
             entity.Size = Randomite.RandomSize(container);
             entity.BackColor = Randomite.RandomColor();
-            entity.Location = Randomite.RandomPosition(container);
+            entity.Location = Randomite.RandomPosition(container, entity);
 
             container.Controls.Add(entity);
         }
@@ -21,7 +21,7 @@ namespace Omlcs
         {
             entity.Size = new Size(width, height);
             entity.BackColor = Randomite.RandomColor();
-            entity.Location = Randomite.RandomPosition(container);
+            entity.Location = Randomite.RandomPosition(container, entity);
 
             container.Controls.Add(entity);
         }

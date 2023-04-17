@@ -43,42 +43,26 @@ namespace Omlcs.src
             return Color.FromArgb(a, r, g, b);
         }
 
-        public static Point RandomPosition()
+        public static Point RandomPosition(int maxX, int maxY)
         {
-            int x = Rand(0, Screen.PrimaryScreen.Bounds.Width);
-            int y = Rand(0, Screen.PrimaryScreen.Bounds.Height);
+            int x = Rand(0, maxX);
+            int y = Rand(0, maxY);
 
             return new Point(x, y);
         }
 
-        public static Point RandomPosition(int min)
+        public static Point RandomPosition(int minX, int minY, int maxX, int maxY)
         {
-            int x = Rand(min, Screen.PrimaryScreen.Bounds.Width);
-            int y = Rand(min, Screen.PrimaryScreen.Bounds.Height);
+            int x = Rand(minX, maxX);
+            int y = Rand(minY, maxY);
 
             return new Point(x, y);
         }
 
-        public static Point RandomPosition(int min, int max)
+        public static Point RandomPosition(ContainerControl control, Control entity)
         {
-            int x = Rand(min, max);
-            int y = Rand(min, max);
-
-            return new Point(x, y);
-        }
-
-        public static Point RandomPosition(Control container)
-        {
-            int x = Rand(0, container.ClientSize.Width);
-            int y = Rand(0, container.ClientSize.Height);
-
-            return new Point(x, y);
-        }
-
-        public static Point RandomPosition(int min, Control container)
-        {
-            int x = Rand(min, container.ClientSize.Width);
-            int y = Rand(min, container.ClientSize.Height);
+            int x = Rand(0, control.Width - entity.Width);
+            int y = Rand(0, control.Height - entity.Height);
 
             return new Point(x, y);
         }
@@ -91,14 +75,6 @@ namespace Omlcs.src
             return new Size(width, height);
         }
 
-        public static Size RandomSize(int min)
-        {
-            int width = Rand(min, Screen.PrimaryScreen.Bounds.Width);
-            int height = Rand(min, Screen.PrimaryScreen.Bounds.Height);
-
-            return new Size(width, height);
-        }
-
         public static Size RandomSize(int min, int max)
         {
             int width = Rand(min, max);
@@ -107,18 +83,10 @@ namespace Omlcs.src
             return new Size(width, height);
         }
 
-        public static Size RandomSize(Control container)
+        public static Size RandomSize(int minX, int minY, int maxX, int maxY)
         {
-            int width = Rand(0, container.ClientSize.Width);
-            int height = Rand(0, container.ClientSize.Height);
-
-            return new Size(width, height);
-        }
-
-        public static Size RandomSize(int min, Control container)
-        {
-            int width = Rand(min, container.ClientSize.Width);
-            int height = Rand(min, container.ClientSize.Height);
+            int width = Rand(minX, maxX);
+            int height = Rand(minY, maxY);
 
             return new Size(width, height);
         }

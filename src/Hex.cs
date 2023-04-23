@@ -5,12 +5,12 @@ using System.Globalization;
 
 namespace Omlcs.src
 {
-    public class Hex
+    public static class Hex
     {
         public static Color HexColor(string hex)
         {
-            int offset = hex[0] == '#' ? 1 : 0;
-
+            int offset = (hex[0] == '#') ? 1 : 0;
+            
             byte r = ParseHex(hex, 0 + offset, 2 + offset);
             byte g = ParseHex(hex, 2 + offset, 4 + offset);
             byte b = ParseHex(hex, 4 + offset, 6 + offset);

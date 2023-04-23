@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Omlcs.src
 {
-    public class Randomite
+    public static class Randomite
     {
         public static Random rand = new Random();
 
@@ -25,7 +25,6 @@ namespace Omlcs.src
 
         public static Color RandomColor()
         {
-            /* ja bym tu użył  ? : z alfą i coś, ale coś mi piszę IDE, iż trzeba .NETa zaktuailozwać*/
             byte r = (byte)Rand(0, 255);
             byte g = (byte)Rand(0, 255);
             byte b = (byte)Rand(0, 255);

@@ -3,15 +3,15 @@
 namespace Omlcs.src
 {
 
-    /// <summary>
-    /// Klasa zawierająca różnego rodzaju obiekty matematyczne.
-    /// </summary>
-    public class Mathex
+    public static class Mathex
     {
 
         public static float PI = (float)Math.PI;
+        public static float PI2 = (float)Math.PI * 2;
+        public static float PI_2 = (float)Math.PI / 2;
+        public static float TAU = PI2;
         public static float E = (float)Math.E;
-        public static float goldenRatio = (float)Fib(20) / (float)Fib(19);
+        public static float PHI = Fib(20) / Fib(19);
 
         public static long Factorial(int n)
         {

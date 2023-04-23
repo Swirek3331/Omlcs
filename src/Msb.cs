@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Omlcs.src
 {
-    public class Msb
+    public static class Msb
     {
         public static void Message(string message)
         {

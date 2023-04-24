@@ -49,8 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="src\Fun.cs" />
     <Compile Include="src\Colores.cs" />
+=======
+    <Compile Include="src\Hex.cs" />
+>>>>>>> b7699ed28a2030d517bb24b94cd9417c93047c47
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Msb.cs" />
     <Compile Include="src\Randomite.cs" />

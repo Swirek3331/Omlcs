@@ -49,8 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Hex.cs" />
-    <Compile Include="src\Summon.cs" />
+    <Compile Include="src\Fun.cs" />
+    <Compile Include="src\Colores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Msb.cs" />
     <Compile Include="src\Randomite.cs" />

@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace Omlcs.src
 {
-    public static class Hex
+    public static class Colores
     {
         public static Color HexColor(string hex)
         {

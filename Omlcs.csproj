@@ -55,7 +55,9 @@
     <Compile Include="src\Msb.cs" />
     <Compile Include="src\Randomite.cs" />
     <Compile Include="src\Mathex.cs" />
-    <Compile Include="src\Util.cs" />
+    <Compile Include="src\util\Arrays.cs" />
+    <Compile Include="src\util\NumSys.cs" />
+    <Compile Include="src\util\Sorting.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

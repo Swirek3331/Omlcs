@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
 [assembly: AssemblyTitle("Omlcs")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Moja własna śmiszna biblioteka, robiona pod Windows Forms")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Omlcs")]

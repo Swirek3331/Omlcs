@@ -36,6 +36,9 @@
   <PropertyGroup>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,15 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\com\Forms.cs" />
     <Compile Include="src\Fun.cs" />
     <Compile Include="src\Colores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Msb.cs" />
+    <Compile Include="src\com\Msb.cs" />
     <Compile Include="src\Randomite.cs" />
     <Compile Include="src\Mathex.cs" />
     <Compile Include="src\util\Arrays.cs" />
     <Compile Include="src\util\NumSys.cs" />
-    <Compile Include="src\util\Sorting.cs" />
+    <Compile Include="src\util\Search.cs" />
+    <Compile Include="src\util\Sort.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

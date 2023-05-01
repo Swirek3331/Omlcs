@@ -11,7 +11,7 @@ namespace Omlcs.src
         public static float PI_2 = (float)Math.PI / 2;
         public static float TAU = PI2;
         public static float E = (float)Math.E;
-        public static float PHI = Fib(20) / Fib(19);
+        public static float PHI = Fib(50) / Fib(49);
 
         public static long Factorial(int n)
         {
@@ -33,6 +33,11 @@ namespace Omlcs.src
         public static float Sqrt(float x)
         {
             return (float)Math.Sqrt(x);
+        }
+
+        public static int BoolToInt(bool b)
+        {
+            return b ? 1 : 0;
         }
     }
 }

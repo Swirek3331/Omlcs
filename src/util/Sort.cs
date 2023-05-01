@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Omlcs.src.util
 {
-    public static class Sorting
+    public static class Sort
     {
         //Na razie go tak zrobiłem, ale może później będzie wydajniejszy
         //Wciąż i tak O(n^2)

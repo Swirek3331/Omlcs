@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Omlcs.src
+namespace Omlcs.src.com
 {
     public static class Msb
     {

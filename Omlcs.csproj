@@ -59,7 +59,7 @@
     <Compile Include="src\com\Msb.cs" />
     <Compile Include="src\Randomite.cs" />
     <Compile Include="src\Mathex.cs" />
-    <Compile Include="src\util\Arrays.cs" />
+    <Compile Include="src\util\Arr.cs" />
     <Compile Include="src\util\NumSys.cs" />
     <Compile Include="src\util\Search.cs" />
     <Compile Include="src\util\Sort.cs" />

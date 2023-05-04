@@ -16,9 +16,7 @@ namespace Omlcs.src.util
                 {
                     if (array[j] > array[j+1])
                     {
-                        int temp = array[j+1];
-                        array[j+1] = array[j];
-                        array[j] = temp;
+                        Arr.Swap(array, j, j+1);
                     }
                 }
             }

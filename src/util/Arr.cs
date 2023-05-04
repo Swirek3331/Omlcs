@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Omlcs.src.util
 {
-    public static class Arrays
+    public static class Arr
     {
         public static T[] FillAnArray<T>(T[] array, T value)
         {
@@ -65,6 +65,13 @@ namespace Omlcs.src.util
         public static int[,] Zeros(int rows, int cols)
         {
             return Create2DArray(rows, cols, 0);
+        }
+
+        public static void Swap<T>(T[] array, int a, int b)
+        {
+            T temp = array[b];
+            array[b] = array[a];
+            array[a] = temp;
         }
     }
 }

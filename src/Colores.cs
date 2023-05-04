@@ -7,6 +7,12 @@ namespace Omlcs.src
 {
     public static class Colores
     {   
+
+        /// <summary>
+        /// Kolor w formacie HEX.
+        /// </summary>
+        /// <param name="hex">Kolor HEX</param>
+        /// <returns>Kolor</returns>
         public static Color HexColor(string hex)
         {
             int offset = (hex[0] == '#') ? 1 : 0;

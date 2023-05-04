@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing;
+using System.ComponentModel;
 
 namespace Omlcs.src.forms
 {
     //Zrobię to poswojemu, jebać microsoft.
     partial class Output1
     {
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         protected override void Dispose(bool disposing)
         {
@@ -24,9 +27,11 @@ namespace Omlcs.src.forms
         {
             this.SuspendLayout();
             
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new Size(Screen.PrimaryScreen.Bounds.Width / 10, Screen.PrimaryScreen.Bounds.Height / 5);
             this.Name = "Output1";
             this.ResumeLayout(false);
+
+            
         }
     }
 }

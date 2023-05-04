@@ -62,11 +62,25 @@ namespace Omlcs.src.util
             return Fill3DArray(array, value);
         }
 
+
+        /// <summary>
+        /// Tworzy dwu wymiarową tablice wypełnioną zerami.
+        /// </summary>
+        /// <param name="rows">Wielkość X</param>
+        /// <param name="cols">Wielkość </param>
+        /// <returns>Tablice wypełnioną zerami</returns>
         public static int[,] Zeros(int rows, int cols)
         {
             return Create2DArray(rows, cols, 0);
         }
 
+        /// <summary>
+        /// Zamienia dwa elementy w tablicy.
+        /// </summary>
+        /// <typeparam name="T">Trzyszcz</typeparam>
+        /// <param name="array">Tablica</param>
+        /// <param name="a">Indeks do zamiany</param>
+        /// <param name="b">Indek do zamianwy</param>
         public static void Swap<T>(T[] array, int a, int b)
         {
             T temp = array[b];

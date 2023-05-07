@@ -84,5 +84,22 @@ namespace Omlcs.src.graphics
 
             return Color.FromArgb(r, g, b);
         }
+
+        /// <summary>
+        /// Kolor w formacie CMYK.
+        /// </summary>
+        /// <param name="cyan">"Ciekawy niebieski"</param>
+        /// <param name="magenta">"Dziwny fioletowy"</param>
+        /// <param name="yellow">Żółty</param>
+        /// <param name="black">Czarny</param>
+        /// <returns>Kolor</returns>
+        public static Color ColorOf(int cyan, int magenta, int yellow, int black)
+        {
+            byte r = (byte)(255 * (1 - cyan) * (1 - black));
+            byte g = (byte)(255 * (1 - magenta) * (1 - black));
+            byte b = (byte)(255 * (1 - yellow) * (1 - black));
+
+            return Color.FromArgb(r, g, b);
+        }
     }
 }

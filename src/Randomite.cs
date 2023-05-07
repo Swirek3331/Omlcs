@@ -40,19 +40,19 @@ namespace Omlcs.src
 
         public static Color RandomColor()
         {
-            byte r = (byte)Rand(0, 255);
-            byte g = (byte)Rand(0, 255);
-            byte b = (byte)Rand(0, 255);
+            byte r = RandByte();
+            byte g = RandByte();
+            byte b = RandByte();
 
             return Color.FromArgb(r, g, b);
         }
 
         public static Color RandomColorAlpha()
         {
-            byte r = (byte)Rand(0, 255);
-            byte g = (byte)Rand(0, 255);
-            byte b = (byte)Rand(0, 255);
-            byte a = (byte)Rand(0, 255);
+            byte r = RandByte();
+            byte g = RandByte();
+            byte b = RandByte();
+            byte a = RandByte();
 
             return Color.FromArgb(a, r, g, b);
         }

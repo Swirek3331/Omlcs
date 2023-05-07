@@ -29,6 +29,13 @@ namespace Omlcs.src.graphics
                 return Color.FromArgb(r, g, b);
         }
         
+        /// <summary>
+        /// Kolor w formacie HSL.
+        /// </summary>
+        /// <param name="hueDeg">Odcień</param>
+        /// <param name="saturation">Saturacja</param>
+        /// <param name="lightness">Jasność</param>
+        /// <returns>Kolor</returns>
         public static Color ColorOf (int hueDeg, float saturation, float lightness)
         {
             int d = (int)(saturation * (1 - Math.Abs(2 * lightness - 1)));

@@ -23,6 +23,21 @@ namespace Omlcs.src
             return rand.Next(min, max);
         }
 
+        public static byte RandByte()
+        {
+            return (byte)rand.Next(0, Byte.MaxValue);
+        }
+
+        public static byte RandByte(byte max)
+        {
+            return (byte)rand.Next(max);
+        }
+
+        public static byte RandByte(byte min, byte max)
+        {
+            return (byte)rand.Next(min, max);
+        }
+
         public static Color RandomColor()
         {
             byte r = (byte)Rand(0, 255);

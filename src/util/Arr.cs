@@ -62,7 +62,6 @@ namespace Omlcs.src.util
             return Fill3DArray(array, value);
         }
 
-
         /// <summary>
         /// Tworzy dwu wymiarową tablice wypełnioną zerami.
         /// </summary>

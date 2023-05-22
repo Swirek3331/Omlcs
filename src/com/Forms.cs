@@ -6,8 +6,6 @@ namespace Omlcs.src.com
 {
     public static class Forms
     {
-        public static Icon meineIcon = new Icon("icon.ico");
-
         public static void ShowForm(Form form, Form parrent)
         {
             form.Icon = parrent.Icon;

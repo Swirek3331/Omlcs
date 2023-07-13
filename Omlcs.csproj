@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\Pobrane\System.Windows.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -30,5 +30,9 @@ namespace Omlcs.Graphic
 
         }
 
+        public static string HexFrom(Color color)
+        {
+            return "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
+        }
     }
 }

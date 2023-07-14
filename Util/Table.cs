@@ -18,7 +18,7 @@ namespace Omlcs.Util
             //Niestety switch nie chce działać z wartością zmienną.
             if (index == -1)
                 throw new ArgumentException("Brak elementu w tablicy");
-            if (index == array.Length - 1)
+            else if (index == array.Length - 1)
                 return array[0];
             else
                 return array[index + 1];

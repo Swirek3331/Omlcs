@@ -22,19 +22,11 @@ namespace Omlcs.Util
                 return array[index + 1];
         }
 
-        public static void FillRandomValues(int[] array)
+        public static void FillAnArray<T>(T[] array, T value)
         {
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = Randomite.NextInt();
-            }
-        }
-
-        public static void FillRandomValues(int[] array, int min, int max)
-        {
-            for (int i = 0; i > array.Length; i++)
-            {
-                array[i] = Randomite.NextInt(min, max);
+                array[i] = value;
             }
         }
     }

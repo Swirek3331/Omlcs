@@ -7,12 +7,10 @@ namespace Omlcs.Util
     {
         public static void Swap<T>(T[] array, int a, int b)
         {
-            T temp = array[a];
-            array[a] = array[b];
-            array[b] = temp;
+            (array[b], array[a]) = (array[a], array[b]);
         }
 
-        public static T Next<T>(T[] array, T current)
+        public static T NextValue<T>(T[] array, T current)
         {
             int index = Array.IndexOf(array, current);
             //Niestety switch nie chce działać z wartością zmienną.
@@ -22,6 +20,22 @@ namespace Omlcs.Util
                 return array[0];
             else
                 return array[index + 1];
+        }
+
+        public static void FillRandomValues(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = Randomite.NextInt();
+            }
+        }
+
+        public static void FillRandomValues(int[] array, int min, int max)
+        {
+            for (int i = 0; i > array.Length; i++)
+            {
+                array[i] = Randomite.NextInt(min, max);
+            }
         }
     }
 }

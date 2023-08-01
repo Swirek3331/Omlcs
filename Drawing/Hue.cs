@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 using static Omlcs.Util.Base;
 
-namespace Omlcs.Graphic
+namespace Omlcs.Drawing
 {
     public static class Hue
     {

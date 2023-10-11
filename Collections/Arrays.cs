@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
+using Omlcs.MathEtc;
 
 namespace Omlcs.Collections
 {
@@ -23,6 +25,32 @@ namespace Omlcs.Collections
                 return array[index + 1];
             }
 
+        }
+
+        public static void FillAnArray<T>(T[] array, T value)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = value;
+            }
+        }
+
+        public static void FillAnArray(int[] array)
+        {
+            FillAnArray(array, int.MaxValue);
+        }
+
+        public static void FillAnArray(int[] array, int max)
+        {
+            FillAnArray(array, 0, max);
+        }
+
+        public static void FillAnArray(int[] array, int min, int max)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = Randomite.Next(min, max);
+            }
         }
     }
 }

@@ -1,17 +1,44 @@
 using System;
+using System.Collections.Generic;
 
 namespace Omlcs.IO
 {
     public static class Terminal
     {
-        public static void Printf(string text)
+        public static void Printf(object text)
         {
             Console.WriteLine(text);
         }
 
-        public static void Printf(object obj)
+        public static string? Readf()
         {
-            Console.WriteLine(obj.ToString());
+            return Console.ReadLine();
+        }
+
+        public static void Display<T>(T[] array)
+        {
+            Display(array, 0, array.Length);
+        }
+
+        public static void Display<T>(T[] array, int start, int end)
+        {
+            for (int i = start; i < end; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+        }
+
+        public static void ReverseDisplay<T>(T[] array)
+        {
+            ReverseDisplay(array, 0, array.Length - 1);
+        }
+
+        public static void ReverseDisplay<T>(T[] array, int start, int end)
+        {
+            for (int i = end; i >= start; i--)
+            {
+                Console.WriteLine(array[i]);
+            }
         }
     }
 }

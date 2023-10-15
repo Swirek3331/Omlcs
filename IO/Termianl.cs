@@ -24,7 +24,7 @@ namespace Omlcs.IO
         {
             for (int i = start; i < end; i++)
             {
-                Console.WriteLine(values.ElementAt(i);
+                Console.WriteLine(values.ElementAt(i));
             }
         }
 

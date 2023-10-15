@@ -20,11 +20,11 @@ namespace Omlcs.IO
             Display(array, 0, array.Length);
         }
 
-        public static void Display<T>(T[] array, int start, int end)
+        public static void Display<T>(IEnumerable<T> values, int start, int end)
         {
             for (int i = start; i < end; i++)
             {
-                Console.WriteLine(array[i]);
+                Console.WriteLine(values.ElementAt(i);
             }
         }
 

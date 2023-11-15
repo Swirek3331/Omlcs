@@ -5,26 +5,16 @@ namespace Omlcs.IO
 {
     public static class Terminal
     {
-        public static void Printf(object text)
+        public static void Display<T>(IEnumerable<T> structure)
         {
-            Console.WriteLine(text);
+            Display(structure, 0, structure.Count());
         }
 
-        public static string? Readf()
-        {
-            return Console.ReadLine();
-        }
-
-        public static void Display<T>(T[] array)
-        {
-            Display(array, 0, array.Length);
-        }
-
-        public static void Display<T>(IEnumerable<T> values, int start, int end)
+        public static void Display<T>(IEnumerable<T> structure, int start, int end)
         {
             for (int i = start; i < end; i++)
             {
-                Console.WriteLine(values.ElementAt(i));
+                Console.WriteLine(structure.ElementAt(i));
             }
         }
 

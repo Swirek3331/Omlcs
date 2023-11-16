@@ -19,7 +19,7 @@ namespace Omlcs.IO
                 new TextBox(),
                 new Button(),
                 new Button(),
-            }
+            },
         };
 
         public static void Message(string name, string description)
@@ -38,11 +38,13 @@ namespace Omlcs.IO
         }
 
         //TODO: implement
-        private static string Prompt(string name, string label, string defaultText)
+        private static string? Prompt(string name, string label, string? defaultText)
         {
             inputWindow.Text = name;
             inputWindow.Controls[0].Text = label;
             inputWindow.Controls[1].Text = defaultText;
+
+            return null;
         }
     }
 }

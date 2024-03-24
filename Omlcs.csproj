@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows10.0.17763.0</TargetFramework>
@@ -10,10 +10,6 @@
     <Reference Include="System.Windows.Forms">
       <HintPath>System.Windows.Forms.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Src\" />
   </ItemGroup>
 
   <ItemGroup>

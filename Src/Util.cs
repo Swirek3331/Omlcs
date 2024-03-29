@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Omlcs
 {
-    public class Main
+    public class Util
     {
         public static int Floor(float x)
         {

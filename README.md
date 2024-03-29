@@ -2,4 +2,4 @@
 
 Biblioteka?
 
-Robione pod zajęcia tylko
+Robione podemnie; pod zajęcia; pod ćwiczenia

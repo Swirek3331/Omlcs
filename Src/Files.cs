@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Omlcs.Src
+namespace Omlcs
 {
     public static class Files
     {

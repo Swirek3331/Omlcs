@@ -6,7 +6,8 @@ namespace Omlcs
     {
         public static int Floor(float x)
         {
-            int n = (int)x;//na razie tak
+            int rest = (int)(x % 1);
+            int n = (int)(x - rest);
 
             return n;
         }

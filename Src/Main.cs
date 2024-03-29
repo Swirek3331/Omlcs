@@ -10,9 +10,9 @@ namespace Omlcs
     {
         public static int Floor(float x)
         {
-            var n = x.ToString().Split('.');
+            int n = (int)x;
 
-            return int.Parse(n[0]);
+            return n;
         }
 
         public static int Round(float x)

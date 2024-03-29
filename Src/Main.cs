@@ -10,7 +10,7 @@ namespace Omlcs
     {
         public static int Floor(float x)
         {
-            int n = (int)x;
+            int n = (int)x;//na razie tak
 
             return n;
         }

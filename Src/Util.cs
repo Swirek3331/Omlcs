@@ -134,7 +134,7 @@ namespace Omlcs
 
         public static void Swap(ref int[] arr, int i, int j)
         {
-            Swap(ref arr[i], ref arr[j]);//Zadziała?
+            Swap(ref arr[i], ref arr[j]);
         }
 
         public static void Reverse(ref int[] arr)

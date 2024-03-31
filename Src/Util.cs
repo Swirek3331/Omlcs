@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Omlcs
 {
@@ -36,6 +37,25 @@ namespace Omlcs
         public static string RootPath()
         {
             return Directory.GetParent(Directory.GetCurrentDirectory())!.Parent!.Parent!.FullName;
+        }
+
+        public static int Next(int min, int max)
+        {
+            Random random = new Random();
+
+            return random.Next(min, max);
+        }
+
+        public static int Next(int max)
+        {
+            return Next(0, max);
+        }
+
+        public static float Random()
+        {
+            Random random = new Random();
+
+            return (float)random.NextDouble();
         }
     }
 }

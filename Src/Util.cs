@@ -97,5 +97,32 @@ namespace Omlcs
         {
             Fill(arr, 100);
         }
+
+        public static void Display(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+            Console.WriteLine();
+        }
+
+        public static string Join(int[] arr, string separator)
+        {
+            string str = "";
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                str += arr[i] + separator;
+            }
+
+            return str;
+        }
+
+        public static string Join(int[] arr)
+        {
+            return Join(arr, " ");
+        }
     }
 }

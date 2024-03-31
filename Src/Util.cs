@@ -41,7 +41,7 @@ namespace Omlcs
 
         public static int Next(int min, int max)
         {
-            Random random = new Random();
+            Random random = new();
 
             return random.Next(min, max);
         }
@@ -53,9 +53,49 @@ namespace Omlcs
 
         public static float Random()
         {
-            Random random = new Random();
+            Random random = new();
 
             return (float)random.NextDouble();
+        }
+
+        public static int[] Build(int x, int min, int max)
+        {
+            int[] arr = new int[x];
+
+            for (int i = 0; i < x; i++)
+            {
+                arr[i] = Next(min, max);
+            }
+
+            return arr;
+        }
+
+        public static int[] Build(int x, int max)
+        {
+            return Build(x, 0, max);
+        }
+
+        public static int[] Build(int x)
+        {
+            return Build(x, 100);
+        }
+
+        public static void Fill(int[] arr, int min, int max)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Next(min, max);
+            }
+        }
+
+        public static void Fill(int[] arr, int max)
+        {
+            Fill(arr, 0, max);
+        }
+
+        public static void Fill(int[] arr)
+        {
+            Fill(arr, 100);
         }
     }
 }

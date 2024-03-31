@@ -32,5 +32,10 @@ namespace Omlcs
         {
             return Floor(x) + 1;
         }
+
+        public static string RootPath()
+        {
+            return Directory.GetParent(Directory.GetCurrentDirectory())!.Parent!.Parent!.FullName;
+        }
     }
 }

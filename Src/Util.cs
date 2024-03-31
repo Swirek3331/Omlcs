@@ -125,23 +125,23 @@ namespace Omlcs
             return Join(arr, " ");
         }
 
-        public static void Swap(int a, int b)
+        public static void Swap(ref int a, ref int b)
         {
             int temp = a;
             a = b;
             b = temp;
         }
 
-        public static void Swap(int[] arr, int i, int j)
+        public static void Swap(ref int[] arr, int i, int j)
         {
-            Swap(arr[i], arr[j]);//Zadziała?
+            Swap(ref arr[i], ref arr[j]);//Zadziała?
         }
 
-        public static void Reverse(int[] arr)
+        public static void Reverse(ref int[] arr)
         {
             for (int i = 0; i < arr.Length / 2; i++)
             {
-                Swap(arr, i, arr.Length - i - 1);
+                Swap(ref arr, i, arr.Length - i - 1);
             }
         }
     }

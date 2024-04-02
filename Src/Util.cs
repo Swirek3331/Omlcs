@@ -144,5 +144,36 @@ namespace Omlcs
                 Swap(ref arr, i, arr.Length - i - 1);
             }
         }
+
+        public static float Sum(params float[] arr)
+        {
+            float sum = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+
+            return sum;
+        }
+
+        public static float Average(params float[] arr)
+        {
+            return Sum(arr) / arr.Length;
+        }
+
+        public static float Median(params float[] arr)
+        {
+            Array.Sort(arr);
+
+            if (arr.Length % 2 == 0)
+            {
+                return (arr[arr.Length / 2] + arr[arr.Length / 2 - 1]) / 2;
+            }
+            else
+            {
+                return arr[arr.Length / 2];
+            }
+        }
     }
 }

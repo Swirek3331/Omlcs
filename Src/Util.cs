@@ -98,7 +98,7 @@ namespace Omlcs
             Fill(arr, 100);
         }
 
-        public static void Display(int[] arr)
+        public static void Display<T>(T[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
@@ -108,7 +108,7 @@ namespace Omlcs
             Console.WriteLine();
         }
 
-        public static string Join(int[] arr, string separator)
+        public static string Join<T>(T[] arr, string separator)
         {
             string str = "";
 
@@ -120,7 +120,7 @@ namespace Omlcs
             return str;
         }
 
-        public static string Join(int[] arr)
+        public static string Join<T>(T[] arr)
         {
             return Join(arr, " ");
         }
@@ -244,7 +244,7 @@ namespace Omlcs
             Fill(arr, 100);
         }
 
-        public static void Display(int[,] arr)
+        public static void Display<T>(T[,] arr)
         {
             for (int i = 0; i < arr.GetLength(0); i++)
             {
@@ -257,7 +257,7 @@ namespace Omlcs
             }
         }
 
-        public static string Join(int[,] arr, string separator)
+        public static string Join<T>(T[,] arr, string separator)
         {
             string str = "";
 
@@ -274,7 +274,7 @@ namespace Omlcs
             return str;
         }
 
-        public static string Join(int[,] arr)
+        public static string Join<T>(T[,] arr)
         {
             return Join(arr, " ");
         }

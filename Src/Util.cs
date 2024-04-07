@@ -175,5 +175,27 @@ namespace Omlcs
                 return arr[arr.Length / 2];
             }
         }
+        
+        public static float[] IntToFloatArr(int[] arr)
+        {
+            float[] floatArr = new float[arr.Length];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                floatArr[i] = arr[i];
+            }
+
+            return floatArr;
+        }
+
+        public static int BoolToInt(bool @bool)
+        {
+            return @bool ? 1 : 0;
+        }
+
+        public static bool IntToBool(int num)
+        {
+            return num == 1;
+        }
     }
 }

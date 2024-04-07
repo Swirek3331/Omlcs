@@ -278,5 +278,25 @@ namespace Omlcs
         {
             return Join(arr, " ");
         }
+
+        public static void Line(int lenght)
+        {
+            for (int i = 0; i < lenght; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.Write("-");
+                }
+                else
+                {
+                    Console.Write("=");
+                }
+            }
+        }
+
+        public static void Line()
+        {
+            Line(25);
+        }
     }
 }

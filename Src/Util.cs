@@ -58,7 +58,7 @@ namespace Omlcs
             return (float)random.NextDouble();
         }
 
-        public static int[] Build(int x, int min, int max)
+        public static int[] BuildArray(int x, int min, int max)
         {
             int[] arr = new int[x];
 
@@ -70,14 +70,14 @@ namespace Omlcs
             return arr;
         }
 
-        public static int[] Build(int x, int max)
+        public static int[] BuildArray(int x, int max)
         {
-            return Build(x, 0, max);
+            return BuildArray(x, 0, max);
         }
 
-        public static int[] Build(int x)
+        public static int[] BuildArray(int x)
         {
-            return Build(x, 100);
+            return BuildArray(x, 100);
         }
 
         public static void Fill(int[] arr, int min, int max)
@@ -196,6 +196,87 @@ namespace Omlcs
         public static bool IntToBool(int num)
         {
             return num == 1;
+        }
+
+        public static int[,] BuildArray2D(int x, int y, int min, int max)
+        {
+            int[,] arr = new int[x, y];
+
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    arr[i, j] = Next(min, max);
+                }
+            }
+
+            return arr;
+        }
+
+        public static int[,] BuildArray2D(int x, int y, int max)
+        {
+            return BuildArray2D(x, y, 0, max);
+        }
+
+        public static int[,] BuildArray2D(int x, int y)
+        {
+            return BuildArray2D(x, y, 100);
+        }
+
+        public static void Fill(int[,] arr, int min, int max)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    arr[i, j] = Next(min, max);
+                }
+            }
+        }
+
+        public static void Fill(int[,] arr, int max)
+        {
+            Fill(arr, 0, max);
+        }
+
+        public static void Fill(int[,] arr)
+        {
+            Fill(arr, 100);
+        }
+
+        public static void Display(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i, j] + " ");
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        public static string Join(int[,] arr, string separator)
+        {
+            string str = "";
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    str += arr[i, j] + separator;
+                }
+
+                str += Environment.NewLine;
+            }
+
+            return str;
+        }
+
+        public static string Join(int[,] arr)
+        {
+            return Join(arr, " ");
         }
     }
 }

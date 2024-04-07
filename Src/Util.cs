@@ -281,17 +281,21 @@ namespace Omlcs
 
         public static void Line(int lenght)
         {
+            string line = "";
+
             for (int i = 0; i < lenght; i++)
             {
                 if (i % 2 == 0)
                 {
-                    Console.Write("-");
+                    line += "-";
                 }
                 else
                 {
-                    Console.Write("=");
+                    line += "=";
                 }
             }
+
+            Console.WriteLine(line);
         }
 
         public static void Line()

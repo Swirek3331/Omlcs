@@ -233,5 +233,23 @@ namespace Omlcs
 
             return arr;
         }
+
+        public static float[] ToFloatArray(string str)
+        {
+            return ToFloatArray(str, " ");
+        }
+
+        public static float[] ToFloatArray(string str, string seperator)
+        {
+            string[] strArr = str.Split(seperator);
+            float[] arr = new float[strArr.Length];
+
+            for (int i = 0; i < strArr.Length; i++)
+            {
+                arr[i] = float.Parse(strArr[i]);
+            }
+
+            return arr;
+        }
     }
 }

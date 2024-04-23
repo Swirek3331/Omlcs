@@ -221,5 +221,37 @@ namespace Omlcs
 
             return arr;
         }
+
+        public static void DisplayDev(int[] arr)
+        {
+            string line = "{ Lenght: " + arr.Length;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                line += ", " + i + ": " + arr[i];
+            }
+
+            line += " }";
+
+            Console.WriteLine(line);
+        }
+
+        //TODO
+        public static void DisplayDev(int[,] arr)
+        {
+            
+        }
+
+        public static void DisplayDev(int[][] arr)
+        {
+            Console.WriteLine("{ Length: " + arr.Length);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                DisplayDev(arr[i]);
+            }
+
+            Console.WriteLine("}");
+        }
     }
 }

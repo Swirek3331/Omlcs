@@ -46,6 +46,14 @@ namespace Omlcs
             Fill(arr, 100);
         }
 
+        public static void Fill<T>(T[] arr, T value)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = value;
+            }
+        }
+
         public static void Display<T>(T[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -151,6 +159,17 @@ namespace Omlcs
             Fill(arr, 100);
         }
 
+        public static void Fill<T>(T[,] arr, T value)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    arr[i, j] = value;
+                }
+            }
+        }
+
         public static void Display<T>(T[,] arr)
         {
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -222,7 +241,7 @@ namespace Omlcs
             return arr;
         }
 
-        public static void DisplayDev(int[] arr)
+        public static void DisplayDev<T>(T[] arr)
         {
             string line = "{ Lenght: " + arr.Length;
 
@@ -237,12 +256,12 @@ namespace Omlcs
         }
 
         //TODO
-        public static void DisplayDev(int[,] arr)
+        public static void DisplayDev<T>(T[,] arr)
         {
             
         }
 
-        public static void DisplayDev(int[][] arr)
+        public static void DisplayDev<T>(T[][] arr)
         {
             Console.WriteLine("{ Length: " + arr.Length);
 
@@ -252,6 +271,68 @@ namespace Omlcs
             }
 
             Console.WriteLine("}");
+        }
+
+        public static int[][] BuildArray2DTrue(int x, int y, int min, int max)
+        {
+            int[][] arr = new int[x][];
+
+            for (int i = 0; i < x; i++)
+            {
+                arr[i] = BuildArray(y, min, max);
+            }
+
+            return arr;
+        }
+
+        public static int[][] BuildArray2DTrue(int x, int y, int max)
+        {
+            return BuildArray2DTrue(x, y, 0, max);
+        }
+
+        public static int[][] BuildArray2DTrue(int x, int y)
+        {
+            return BuildArray2DTrue(x, y, 100);
+        }
+
+        public static void Fill(int[][] arr, int min, int max)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Fill(arr[i], min, max);
+            }
+        }
+
+        public static void Fill(int[][] arr, int max)
+        {
+            Fill(arr, 0, max);
+        }
+
+        public static void Fill(int[][] arr)
+        {
+            Fill(arr, 100);
+        }
+
+        //Przetestować
+        public static void NormalizeFloor(ref int[][] arr)
+        {
+            int maxLenght = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].Length > maxLenght)
+                {
+                    maxLenght = arr[i].Length;
+                }
+            }
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].Length < maxLenght)
+                {
+                    Array.Resize(ref arr[i], maxLenght);
+                }
+            }
         }
     }
 }

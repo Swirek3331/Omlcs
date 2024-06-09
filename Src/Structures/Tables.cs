@@ -361,12 +361,10 @@ public class Tables
 
         for (int i = 0; i < arr.Length; i++)
         {
-            if (arr[i].Length == minLenght)
+            if (arr[i].Length != minLenght)
             {
-                break;
+                Array.Resize(ref arr[i], minLenght);
             }
-
-            Array.Resize(ref arr[i], minLenght);
         }
     }
 
@@ -384,12 +382,10 @@ public class Tables
 
         for (int i = 0; i < arr.Length; i++)
         {
-            if (arr[i].Length == maxLenght)
+            if (arr[i].Length != maxLenght)
             {
-                break;
+                Array.Resize(ref arr[i], maxLenght);
             }
-
-            Array.Resize(ref arr[i], maxLenght);
         }
     }
 }

@@ -35,5 +35,12 @@ namespace Omlcs
         {
             Line(25);
         }
+
+        public static void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
     }
 }

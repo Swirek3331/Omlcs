@@ -1,371 +1,395 @@
 ﻿using System;
+
 using static Omlcs.Math;
 
-namespace Omlcs.Src.Structures
+namespace Omlcs.Structures.Tables;
+
+public class Tables
 {
-    public class Tables
+    /*
+     * Display
+     */
+
+
+    public static void Display<T>(T[] arr)
     {
-        public static int[] BuildArray(int x, int min, int max)
+        for (int i = 0; i < arr.Length; i++)
         {
-            int[] arr = new int[x];
+            Console.Write(arr[i] + " ");
+        }
 
-            for (int i = 0; i < x; i++)
+        Console.WriteLine();
+    }
+
+    public static void Display<T>(T[,] arr)
+    {
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
             {
-                arr[i] = Next(min, max);
-            }
-
-            return arr;
-        }
-
-        public static int[] BuildArray(int x, int max)
-        {
-            return BuildArray(x, 0, max);
-        }
-
-        public static int[] BuildArray(int x)
-        {
-            return BuildArray(x, 100);
-        }
-
-        public static void Fill(int[] arr, int min, int max)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = Next(min, max);
-            }
-        }
-
-        public static void Fill(int[] arr, int max)
-        {
-            Fill(arr, 0, max);
-        }
-
-        public static void Fill(int[] arr)
-        {
-            Fill(arr, 100);
-        }
-
-        public static void Fill<T>(T[] arr, T value)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = value;
-            }
-        }
-
-        public static void Display<T>(T[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i] + " ");
+                Console.Write(arr[i, j] + " ");
             }
 
             Console.WriteLine();
         }
+    }
 
-        public static void Display<T>(T[][] arr)
+    public static void Display<T>(T[][] arr)
+    {
+        for (int i = 0; i < arr.Length; i++)
         {
-            for (int i = 0; i < arr.Length; i++)
+            Display(arr[i]);
+        }
+    }
+
+    public static void DisplayDev<T>(T[] arr)
+    {
+        string line = "{ Lenght: " + arr.Length;
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            line += ", " + i + ": " + arr[i];
+        }
+
+        line += " }";
+
+        Console.WriteLine(line);
+    }
+
+    //TODO
+    public static void DisplayDev<T>(T[,] arr)
+    {
+
+    }
+
+    public static void DisplayDev<T>(T[][] arr)
+    {
+        Console.WriteLine("{ Length: " + arr.Length);
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            DisplayDev(arr[i]);
+        }
+
+        Console.WriteLine("}");
+    }
+
+    /*
+     * Create
+     */
+
+
+    public static int[] BuildArray(int x, int min, int max)
+    {
+        int[] arr = new int[x];
+
+        for (int i = 0; i < x; i++)
+        {
+            arr[i] = Next(min, max);
+        }
+
+        return arr;
+    }
+
+    public static int[] BuildArray(int x, int max)
+    {
+        return BuildArray(x, 0, max);
+    }
+
+    public static int[] BuildArray(int x)
+    {
+        return BuildArray(x, 100);
+    }
+
+    public static int[,] BuildArray2D(int x, int y, int min, int max)
+    {
+        int[,] arr = new int[x, y];
+
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < y; j++)
             {
-                Display(arr[i]);
+                arr[i, j] = Next(min, max);
             }
         }
 
-        public static string Join<T>(T[] arr, string separator)
-        {
-            string str = "";
+        return arr;
+    }
 
-            for (int i = 0; i < arr.Length; i++)
+    public static int[,] BuildArray2D(int x, int y, int max)
+    {
+        return BuildArray2D(x, y, 0, max);
+    }
+
+    public static int[,] BuildArray2D(int x, int y)
+    {
+        return BuildArray2D(x, y, 100);
+    }
+
+    public static int[][] BuildArray2DTrue(int x, int y, int min, int max)
+    {
+        int[][] arr = new int[x][];
+
+        for (int i = 0; i < x; i++)
+        {
+            arr[i] = BuildArray(y, min, max);
+        }
+
+        return arr;
+    }
+
+    public static int[][] BuildArray2DTrue(int x, int y, int max)
+    {
+        return BuildArray2DTrue(x, y, 0, max);
+    }
+
+    public static int[][] BuildArray2DTrue(int x, int y)
+    {
+        return BuildArray2DTrue(x, y, 100);
+    }
+
+    /*
+     * Fill
+     */
+
+
+    public static void Fill(int[] arr, int min, int max)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = Next(min, max);
+        }
+    }
+
+    public static void Fill(int[] arr, int max)
+    {
+        Fill(arr, 0, max);
+    }
+
+    public static void Fill(int[] arr)
+    {
+        Fill(arr, 100);
+    }
+
+    public static void Fill<T>(T[] arr, T value)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = value;
+        }
+    }
+
+    public static void Fill(int[,] arr, int min, int max)
+    {
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
             {
-                str += arr[i] + separator;
-            }
-
-            return str;
-        }
-
-        public static string Join<T>(T[] arr)
-        {
-            return Join(arr, " ");
-        }
-
-        public static void Swap(ref int a, ref int b)
-        {
-            int temp = a;
-            a = b;
-            b = temp;
-        }
-
-        public static void Swap(ref int[] arr, int i, int j)
-        {
-            Swap(ref arr[i], ref arr[j]);
-        }
-
-        public static void Reverse(ref int[] arr)
-        {
-            for (int i = 0; i < arr.Length / 2; i++)
-            {
-                Swap(ref arr, i, arr.Length - i - 1);
-            }
-        }
-
-        public static float[] IntToFloatArr(int[] arr)
-        {
-            float[] floatArr = new float[arr.Length];
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                floatArr[i] = arr[i];
-            }
-
-            return floatArr;
-        }
-
-        public static int[,] BuildArray2D(int x, int y, int min, int max)
-        {
-            int[,] arr = new int[x, y];
-
-            for (int i = 0; i < x; i++)
-            {
-                for (int j = 0; j < y; j++)
-                {
-                    arr[i, j] = Next(min, max);
-                }
-            }
-
-            return arr;
-        }
-
-        public static int[,] BuildArray2D(int x, int y, int max)
-        {
-            return BuildArray2D(x, y, 0, max);
-        }
-
-        public static int[,] BuildArray2D(int x, int y)
-        {
-            return BuildArray2D(x, y, 100);
-        }
-
-        public static void Fill(int[,] arr, int min, int max)
-        {
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    arr[i, j] = Next(min, max);
-                }
+                arr[i, j] = Next(min, max);
             }
         }
+    }
 
-        public static void Fill(int[,] arr, int max)
-        {
-            Fill(arr, 0, max);
-        }
+    public static void Fill(int[,] arr, int max)
+    {
+        Fill(arr, 0, max);
+    }
 
-        public static void Fill(int[,] arr)
-        {
-            Fill(arr, 100);
-        }
+    public static void Fill(int[,] arr)
+    {
+        Fill(arr, 100);
+    }
 
-        public static void Fill<T>(T[,] arr, T value)
+    public static void Fill<T>(T[,] arr, T value)
+    {
+        for (int i = 0; i < arr.GetLength(0); i++)
         {
-            for (int i = 0; i < arr.GetLength(0); i++)
+            for (int j = 0; j < arr.GetLength(1); j++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    arr[i, j] = value;
-                }
+                arr[i, j] = value;
             }
         }
+    }
 
-        public static void Display<T>(T[,] arr)
+    public static void Fill(int[][] arr, int min, int max)
+    {
+        for (int i = 0; i < arr.Length; i++)
         {
-            for (int i = 0; i < arr.GetLength(0); i++)
+            Fill(arr[i], min, max);
+        }
+    }
+
+    public static void Fill(int[][] arr, int max)
+    {
+        Fill(arr, 0, max);
+    }
+
+    public static void Fill(int[][] arr)
+    {
+        Fill(arr, 100);
+    }
+
+    public static void Fill<T>(T[][] arr, T value)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Fill(arr[i], value);
+        }
+    }
+
+    /*
+     * To string
+     */
+
+    public static string Join<T>(T[] arr, string separator)
+    {
+        string str = "";
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            str += arr[i] + separator;
+        }
+
+        return str;
+    }
+
+    public static string Join<T>(T[] arr)
+    {
+        return Join(arr, " ");
+    }
+
+    public static string Join<T>(T[,] arr, string separator)
+    {
+        string str = "";
+
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.Write(arr[i, j] + " ");
-                }
-
-                Console.WriteLine();
-            }
-        }
-
-        public static string Join<T>(T[,] arr, string separator)
-        {
-            string str = "";
-
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    str += arr[i, j] + separator;
-                }
-
-                str += Environment.NewLine;
-            }
-
-            return str;
-        }
-
-        public static string Join<T>(T[,] arr)
-        {
-            return Join(arr, " ");
-        }
-
-        public static int[] ToIntArray(string str)
-        {
-            return ToIntArray(str, " ");
-        }
-
-        public static int[] ToIntArray(string str, string seperator)
-        {
-            string[] strArr = str.Split(seperator);
-            int[] arr = new int[strArr.Length];
-
-            for (int i = 0; i < strArr.Length; i++)
-            {
-                arr[i] = int.Parse(strArr[i]);
-            }
-
-            return arr;
-        }
-
-        public static float[] ToFloatArray(string str)
-        {
-            return ToFloatArray(str, " ");
-        }
-
-        public static float[] ToFloatArray(string str, string seperator)
-        {
-            string[] strArr = str.Split(seperator);
-            float[] arr = new float[strArr.Length];
-
-            for (int i = 0; i < strArr.Length; i++)
-            {
-                arr[i] = float.Parse(strArr[i]);
+                str += arr[i, j] + separator;
             }
 
-            return arr;
+            str += Environment.NewLine;
         }
 
-        public static void DisplayDev<T>(T[] arr)
-        {
-            string line = "{ Lenght: " + arr.Length;
+        return str;
+    }
 
-            for (int i = 0; i < arr.Length; i++)
+    public static string Join<T>(T[,] arr)
+    {
+        return Join(arr, " ");
+    }
+
+    /*
+     * Modify
+     */
+
+    public static void Swap(ref int[] arr, int i, int j)
+    {
+        Util.Swap(ref arr[i], ref arr[j]);
+    }
+
+    public static void Reverse(ref int[] arr)
+    {
+        for (int i = 0; i < arr.Length / 2; i++)
+        {
+            Swap(ref arr, i, arr.Length - i - 1);
+        }
+    }
+
+    public static float[] IntToFloatArr(int[] arr)
+    {
+        float[] floatArr = new float[arr.Length];
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            floatArr[i] = arr[i];
+        }
+
+        return floatArr;
+    }
+
+    public static int[] ToIntArray(string str)
+    {
+        return ToIntArray(str, " ");
+    }
+
+    public static int[] ToIntArray(string str, string seperator)
+    {
+        string[] strArr = str.Split(seperator);
+        int[] arr = new int[strArr.Length];
+
+        for (int i = 0; i < strArr.Length; i++)
+        {
+            arr[i] = int.Parse(strArr[i]);
+        }
+
+        return arr;
+    }
+
+    public static float[] ToFloatArray(string str)
+    {
+        return ToFloatArray(str, " ");
+    }
+
+    public static float[] ToFloatArray(string str, string seperator)
+    {
+        string[] strArr = str.Split(seperator);
+        float[] arr = new float[strArr.Length];
+
+        for (int i = 0; i < strArr.Length; i++)
+        {
+            arr[i] = float.Parse(strArr[i]);
+        }
+
+        return arr;
+    }
+
+    //Przetestować
+
+    public static void NormalizeFloor(ref int[][] arr)
+    {
+        int minLenght = 0;
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i].Length < minLenght)
             {
-                line += ", " + i + ": " + arr[i];
-            }
-
-            line += " }";
-
-            Console.WriteLine(line);
-        }
-
-        //TODO
-        public static void DisplayDev<T>(T[,] arr)
-        {
-
-        }
-
-        public static void DisplayDev<T>(T[][] arr)
-        {
-            Console.WriteLine("{ Length: " + arr.Length);
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                DisplayDev(arr[i]);
-            }
-
-            Console.WriteLine("}");
-        }
-
-        public static int[][] BuildArray2DTrue(int x, int y, int min, int max)
-        {
-            int[][] arr = new int[x][];
-
-            for (int i = 0; i < x; i++)
-            {
-                arr[i] = BuildArray(y, min, max);
-            }
-
-            return arr;
-        }
-
-        public static int[][] BuildArray2DTrue(int x, int y, int max)
-        {
-            return BuildArray2DTrue(x, y, 0, max);
-        }
-
-        public static int[][] BuildArray2DTrue(int x, int y)
-        {
-            return BuildArray2DTrue(x, y, 100);
-        }
-
-        public static void Fill(int[][] arr, int min, int max)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Fill(arr[i], min, max);
-            }
-        }
-
-        public static void Fill(int[][] arr, int max)
-        {
-            Fill(arr, 0, max);
-        }
-
-        public static void Fill(int[][] arr)
-        {
-            Fill(arr, 100);
-        }
-
-        //Przetestować
-
-        public static void NormalizeFloor(ref int[][] arr)
-        {
-            int minLenght = 0;
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i].Length < minLenght)
-                {
-                    minLenght = arr[i].Length;
-                }
-            }
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i].Length == minLenght)
-                {
-                    break;
-                }
-
-                Array.Resize(ref arr[i], minLenght);
+                minLenght = arr[i].Length;
             }
         }
 
-        public static void NormalizeCeil(ref int[][] arr)
+        for (int i = 0; i < arr.Length; i++)
         {
-            int maxLenght = 0;
-
-            for (int i = 0; i < arr.Length; i++)
+            if (arr[i].Length == minLenght)
             {
-                if (arr[i].Length > maxLenght)
-                {
-                    maxLenght = arr[i].Length;
-                }
+                break;
             }
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i].Length == maxLenght)
-                {
-                    break;
-                }
+            Array.Resize(ref arr[i], minLenght);
+        }
+    }
 
-                Array.Resize(ref arr[i], maxLenght);
+    public static void NormalizeCeil(ref int[][] arr)
+    {
+        int maxLenght = 0;
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i].Length > maxLenght)
+            {
+                maxLenght = arr[i].Length;
             }
+        }
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i].Length == maxLenght)
+            {
+                break;
+            }
+
+            Array.Resize(ref arr[i], maxLenght);
         }
     }
 }

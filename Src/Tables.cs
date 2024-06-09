@@ -64,6 +64,14 @@ namespace Omlcs
             Console.WriteLine();
         }
 
+        public static void Display<T>(T[][] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Display(arr[i]);
+            }
+        }
+
         public static string Join<T>(T[] arr, string separator)
         {
             string str = "";
@@ -314,7 +322,31 @@ namespace Omlcs
         }
 
         //Przetestować
+
         public static void NormalizeFloor(ref int[][] arr)
+        {
+            int minLenght = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].Length < minLenght)
+                {
+                    minLenght = arr[i].Length;
+                }
+            }
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].Length == minLenght)
+                {
+                    break;
+                }
+
+                Array.Resize(ref arr[i], minLenght);
+            }
+        }
+
+        public static void NormalizeCeil(ref int[][] arr)
         {
             int maxLenght = 0;
 
@@ -328,10 +360,12 @@ namespace Omlcs
 
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i].Length < maxLenght)
+                if (arr[i].Length == maxLenght)
                 {
-                    Array.Resize(ref arr[i], maxLenght);
+                    break;
                 }
+
+                Array.Resize(ref arr[i], maxLenght);
             }
         }
     }

@@ -2,7 +2,7 @@
 
 using static Omlcs.Math;
 
-namespace Omlcs.Structures.Tables;
+namespace Omlcs.Structures;
 
 public class Tables
 {

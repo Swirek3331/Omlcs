@@ -1,8 +1,7 @@
 ﻿using System;
-
 using static Omlcs.Math;
 
-namespace Omlcs
+namespace Omlcs.Src.Structures
 {
     public class Tables
     {
@@ -266,7 +265,7 @@ namespace Omlcs
         //TODO
         public static void DisplayDev<T>(T[,] arr)
         {
-            
+
         }
 
         public static void DisplayDev<T>(T[][] arr)

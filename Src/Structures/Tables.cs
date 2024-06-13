@@ -309,6 +309,10 @@ public class Tables
         return floatArr;
     }
 
+    /*
+     * Conversion
+     */
+
     public static int[] ToIntArray(string str)
     {
         return ToIntArray(str, " ");
@@ -349,7 +353,7 @@ public class Tables
 
     public static void NormalizeFloor(ref int[][] arr)
     {
-        int minLenght = 0;
+        int minLenght = int.MaxValue;
 
         for (int i = 0; i < arr.Length; i++)
         {
@@ -368,6 +372,7 @@ public class Tables
         }
     }
 
+
     public static void NormalizeCeil(ref int[][] arr)
     {
         int maxLenght = 0;
@@ -382,9 +387,13 @@ public class Tables
 
         for (int i = 0; i < arr.Length; i++)
         {
-            if (arr[i].Length != maxLenght)
+            if (arr[i].Length < maxLenght)
             {
                 Array.Resize(ref arr[i], maxLenght);
+                for (int j = arr[i].Length; j < maxLenght; j++)
+                {
+                    arr[i][j] = 0;
+                }
             }
         }
     }

@@ -70,7 +70,7 @@ public class Mathex
         return x;
     }
 
-    //Zrobić to generyczne
+    //Zrobić to generyczne czy coś
     public static int BoolToInt(bool @bool)
     {
         return @bool ? 1 : 0;

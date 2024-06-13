@@ -70,14 +70,14 @@ public class Mathex
         return x;
     }
 
-    public static int BoolToInt(bool @bool)
+    public static T NumToInt<T>(bool @bool) where T : IComparable<T>
     {
-        return @bool ? 1 : 0;
+        return @bool ? (T)Convert.ChangeType(1, typeof(T)) : (T)Convert.ChangeType(0, typeof(T));
     }
 
-    public static bool IntToBool(int n)
+    public static bool NumToBool<T>(T x) where T : IComparable<T>
     {
-        return n == 1;
+        return x.CompareTo(default) != 0;
     }
 
     /*

@@ -48,11 +48,16 @@ public class Mathex
         return Next(0, max);
     }
 
-    public static float Random()
+    public static float Next(float min, float max)
     {
         Random random = new();
 
-        return (float)random.NextDouble();
+        return (float)random.NextDouble() * (max - min) + min;
+    }
+
+    public static float Next(float max)
+    {
+        return Next(0, max);
     }
 
     /*

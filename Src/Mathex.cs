@@ -70,9 +70,10 @@ public class Mathex
         return x;
     }
 
-    public static T NumToInt<T>(bool @bool) where T : IComparable<T>
+    //Zrobić to generyczne
+    public static int BoolToInt(bool @bool)
     {
-        return @bool ? (T)Convert.ChangeType(1, typeof(T)) : (T)Convert.ChangeType(0, typeof(T));
+        return @bool ? 1 : 0;
     }
 
     public static bool NumToBool<T>(T x) where T : IComparable<T>

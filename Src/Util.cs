@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-using static Omlcs.Math;
+using static Omlcs.Mathex;
 
 namespace Omlcs
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-using static Omlcs.Math;
+using static Omlcs.Mathex;
 
 namespace Omlcs.Structures;
 
@@ -297,6 +297,11 @@ public class Tables
         }
     }
 
+
+    /*
+     * Conversion
+     */
+
     public static float[] IntToFloatArr(int[] arr)
     {
         float[] floatArr = new float[arr.Length];
@@ -308,10 +313,6 @@ public class Tables
 
         return floatArr;
     }
-
-    /*
-     * Conversion
-     */
 
     public static int[] ToIntArray(string str)
     {
@@ -348,8 +349,6 @@ public class Tables
 
         return arr;
     }
-
-    //Przetestować
 
     public static void NormalizeFloor(ref int[][] arr)
     {
@@ -394,6 +393,26 @@ public class Tables
                 {
                     arr[i][j] = 0;
                 }
+            }
+        }
+    }
+
+    //TODO
+    public static void Normalize(ref int[][] arr)
+    {
+        int maxLenght = 0;
+        int minLenght = int.MaxValue;
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i].Length > maxLenght)
+            {
+                maxLenght = arr[i].Length;
+            }
+
+            if (arr[i].Length < minLenght)
+            {
+                minLenght = arr[i].Length;
             }
         }
     }

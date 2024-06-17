@@ -34,9 +34,9 @@ public class Util
         Line(25);
     }
 
-    public static void Swap(ref int a, ref int b)
+    public static void Swap<T>(ref T a, ref T b)
     {
-        int temp = a;
+        T temp = a;
         a = b;
         b = temp;
     }

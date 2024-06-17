@@ -90,34 +90,34 @@ public class Mathex
      * Arythmetic
      */
 
-    public static float Sum(params float[] arr)
+    public static float Sum(params float[] numbers)
     {
         float sum = 0;
 
-        for (int i = 0; i < arr.Length; i++)
+        for (int i = 0; i < numbers.Length; i++)
         {
-            sum += arr[i];
+            sum += numbers[i];
         }
 
         return sum;
     }
 
-    public static float Average(params float[] arr)
+    public static float Average(params float[] numbers)
     {
-        return Sum(arr) / arr.Length;
+        return Sum(numbers) / numbers.Length;
     }
 
-    public static float Median(params float[] arr)
+    public static float Median(params float[] numbers)
     {
-        Array.Sort(arr);
+        Array.Sort(numbers);
 
-        if (arr.Length % 2 == 0)
+        if (numbers.Length % 2 == 0)
         {
-            return (arr[arr.Length / 2] + arr[arr.Length / 2 - 1]) / 2;
+            return (numbers[numbers.Length / 2] + numbers[numbers.Length / 2 - 1]) / 2;
         }
         else
         {
-            return arr[arr.Length / 2];
+            return numbers[numbers.Length / 2];
         }
     }
 }

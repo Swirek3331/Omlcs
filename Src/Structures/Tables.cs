@@ -284,19 +284,18 @@ public class Tables
      * Modify
      */
 
-    public static void Swap(ref int[] arr, int i, int j)
+    public static void Swap<T>(ref T[] arr, int i, int j)
     {
         Util.Swap(ref arr[i], ref arr[j]);
     }
 
-    public static void Reverse(ref int[] arr)
+    public static void Reverse<T>(ref T[] arr)
     {
         for (int i = 0; i < arr.Length / 2; i++)
         {
             Swap(ref arr, i, arr.Length - i - 1);
         }
     }
-
 
     /*
      * Conversion
@@ -350,7 +349,7 @@ public class Tables
         return arr;
     }
 
-    public static void NormalizeFloor(ref int[][] arr)
+    public static void NormalizeFloor<T>(ref T[][] arr)
     {
         int minLenght = int.MaxValue;
 
@@ -372,7 +371,7 @@ public class Tables
     }
 
 
-    public static void NormalizeCeil(ref int[][] arr)
+    public static void NormalizeCeil<T>(ref T[][] arr)
     {
         int maxLenght = 0;
 
@@ -391,14 +390,14 @@ public class Tables
                 Array.Resize(ref arr[i], maxLenght);
                 for (int j = arr[i].Length; j < maxLenght; j++)
                 {
-                    arr[i][j] = 0;
+                    arr[i][j] = default!;
                 }
             }
         }
     }
 
     //TODO
-    public static void Normalize(ref int[][] arr)
+    public static void Normalize<T>(ref T[][] arr)
     {
         int maxLenght = 0;
         int minLenght = int.MaxValue;
@@ -415,5 +414,51 @@ public class Tables
                 minLenght = arr[i].Length;
             }
         }
+    }
+
+    /*
+     * Search
+     */
+
+    public static bool Contains(int[] arr, int value)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] == value)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool Contains(int[,] arr, int value)
+    {
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                if (arr[i, j] == value)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public static bool Contains(int[][] arr, int value)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (Contains(arr[i], value))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
